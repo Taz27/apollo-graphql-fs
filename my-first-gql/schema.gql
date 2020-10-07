@@ -3,6 +3,21 @@ type Query  {
    students: [Student]
    users: [User]
    studentById(id: ID!): Student
+   setFavColor(color: ColorType):String
+}
+
+type Mutation {
+    createStudent(collegeId: ID, firstName: String, lastName: String): String
+    addStudent_returns_object(collegeId: ID, firstName: String, lastName: String): Student
+    delStudent(sid: ID!): String
+    updateStudent(stud: UpdationInput): String
+}
+
+input UpdationInput{
+    id: ID!
+    firstName: String
+    lastName: String
+    collegeId: String
 }
 
 type Student {
@@ -12,6 +27,14 @@ type Student {
    password: String
    fullName: String
    collegeId: String
+   college: College
+}
+
+type College {
+   id: ID!
+   name: String
+   location: String
+   rating: Float
 }
 
 type User {
@@ -22,4 +45,10 @@ type User {
     phone: String
     website: String
     nickname: String
+}
+
+enum ColorType {
+   RED
+   BLUE
+   GREEN
 }
