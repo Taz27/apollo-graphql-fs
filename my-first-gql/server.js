@@ -10,9 +10,23 @@ const fs = require('fs')
 const typeDefs = fs.readFileSync('./schema.gql',{encoding:'utf-8'})
 const resolvers = require('./resolvers')
 
+// Adding Type Definitions
+const typeDefinition = `
+   type Query  {
+      greeting: String
+   }`;
+// Adding resolver
+const  resolverObject = {
+    Query : {
+       greeting: () => 'Hello GraphQL  From TutorialsPoint !!'
+    }
+ };   
+
 const {makeExecutableSchema} = require('graphql-tools')
 const schema = makeExecutableSchema({typeDefs, resolvers})
+//const schema = makeExecutableSchema({typeDefs: typeDefinition, resolvers: resolverObject});
 
+//configure middleware
 app.use(cors(), bodyParser.json());
 
 const  {graphiqlExpress,graphqlExpress} = require('apollo-server-express')
