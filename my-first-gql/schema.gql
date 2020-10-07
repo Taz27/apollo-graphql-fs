@@ -1,15 +1,17 @@
 type Query  {
-   greeting: String,
-   students: [Student],
+   greeting: String
+   students: [Student]
    users: [User]
+   studentById(id: ID!): Student
 }
 
 type Student {
-   id:ID!
-   firstName:String
-   lastName:String
-   password:String
-   collegeId:String
+   id: ID!
+   firstName: String
+   lastName: String
+   password: String
+   fullName: String
+   collegeId: String
 }
 
 type User {
@@ -19,4 +21,5 @@ type User {
     email: String
     phone: String
     website: String
+    nickname: String
 }

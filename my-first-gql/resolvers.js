@@ -11,6 +11,24 @@ const Query = {
                         //console.log(res);
                         return res.data;
                     });
-                }
-}
- module.exports = {Query}
+    },
+    studentById: (root, args, context, info) => {
+        //console.log(root);
+        //console.log(args);
+        //console.log(context);
+        //console.log(info);
+        return db.students.get(args.id);
+    }
+};
+
+//for each single student object returned,resolver is invoked
+
+const Student = {
+    fullName: (root, args, context, info) => `${root.firstName} ${root.lastName}`
+};
+
+const User = {
+    nickname: (root, args, context, info) => `${root.company.name}`
+};
+
+module.exports = {Query, Student, User}
