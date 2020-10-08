@@ -1,15 +1,15 @@
 [
     {
        "id": "col-101",
-       "name": "AMU",
-       "location": "Uttar Pradesh",
+       "name": "Georgian College",
+       "location": "Ontario",
        "rating":5.0
     },
     
     {
        "id": "col-102",
-       "name": "CUSAT",
-       "location": "Kerala",
+       "name": "RMIT",
+       "location": "Melbourne",
        "rating":4.5
     }
  ]

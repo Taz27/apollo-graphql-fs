@@ -15,7 +15,6 @@ const resolvers = require('./resolvers')
 //binding schema and resolver
 const {makeExecutableSchema} = require('graphql-tools')
 const schema = makeExecutableSchema({typeDefs, resolvers})
-//const schema = makeExecutableSchema({typeDefs: typeDefinition, resolvers: resolverObject});
 
 //configure middleware
 //enabling cross domain calls and form post

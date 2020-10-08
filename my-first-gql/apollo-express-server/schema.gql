@@ -4,6 +4,7 @@ type Query  {
    users: [User]
    studentById(id: ID!): Student
    setFavColor(color: ColorType):String
+   sayHello(name: String!): String
 }
 
 type Mutation {
