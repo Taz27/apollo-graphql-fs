@@ -4,7 +4,7 @@ import React from 'react';
 import {ApolloClient, HttpLink, InMemoryCache} from 'apollo-boost';
 import gql from 'graphql-tag';
 
-const endPointUrl = 'http://localhost:9000/graphql';
+const endPointUrl = 'https://881bae3a0l.execute-api.ap-southeast-2.amazonaws.com/graphql';
 const client = new ApolloClient({
   link: new HttpLink({uri: endPointUrl}),
   cache: new InMemoryCache()
